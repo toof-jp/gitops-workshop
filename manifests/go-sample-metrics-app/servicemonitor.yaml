@@ -1,0 +1,16 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: go-sample-metrics-app-monitor
+  namespace: kube-prometheus-stack
+spec:
+  selector:
+    matchLabels:
+      app: go-sample-metrics-app
+  namespaceSelector:
+    matchNames:
+      - default
+  endpoints:
+    - port: metrics
+      interval: 30s
+      path: /metrics
