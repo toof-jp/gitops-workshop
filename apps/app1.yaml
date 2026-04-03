@@ -1,4 +1,3 @@
----
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -15,5 +14,5 @@ spec:
     namespace: default
   syncPolicy:
     automated:
-      prune: true      # Gitから削除されたリソースをクラスタからも削除
-      selfHeal: true   # 手動変更を自動で元に戻す
+      prune: true
+      selfHeal: true
